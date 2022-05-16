@@ -3,4 +3,5 @@
     <string name="hint">Enter a message</string>
     <string name="button_name">Send Message</string>
     <string name="blank_message">Empty</string>
+    <string name="chooser_message">Send message via…</string>
 </resources>

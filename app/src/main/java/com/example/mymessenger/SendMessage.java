@@ -21,7 +21,8 @@ public class SendMessage extends AppCompatActivity {
         Intent sendMessage = new Intent(Intent.ACTION_SEND);
         sendMessage.setType("text/plain");
         sendMessage.putExtra(Intent.EXTRA_TEXT, message);
-        Intent chosenIntent = Intent.createChooser(sendMessage, "Send message via...");
+        String title = getString(R.string.chooser_message);
+        Intent chosenIntent = Intent.createChooser(sendMessage, title);
         startActivity(chosenIntent);
     }
 }
