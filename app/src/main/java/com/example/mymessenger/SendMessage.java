@@ -16,10 +16,12 @@ public class SendMessage extends AppCompatActivity {
     }
 
     public void onSendMessage(View view) {
-        Intent intent = new Intent(this, ReceiveMessage.class);
         EditText editText = findViewById(R.id.message);
         String message = editText.getText().toString();
-        intent.putExtra("message", message);
-        startActivity(intent);
+        Intent sendMessage = new Intent(Intent.ACTION_SEND);
+        sendMessage.setType("text/plain");
+        sendMessage.putExtra(Intent.EXTRA_TEXT, message);
+        Intent chosenIntent = Intent.createChooser(sendMessage, "Send message via...");
+        startActivity(chosenIntent);
     }
 }
